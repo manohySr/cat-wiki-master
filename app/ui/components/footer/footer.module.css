@@ -1,0 +1,43 @@
+.container {
+  background-color: var(--color-black);
+  border-top-right-radius: 3rem;
+  border-top-left-radius: 3rem;
+  height: 9rem;
+  color: var(--color-white);
+  font-size: 1.8rem;
+
+  padding: 3rem 10rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 13rem;
+}
+
+.logo {
+  content: "";
+  display: inline-block;
+  width: 14.4rem;
+  height: 4.8rem;
+  background-color: var(--color-white);
+  mask-image: url(./../../../../public/assests/CatwikiLogo.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 1.6rem;
+  /* letter-spacing: 1.3px; */
+}
+
+.copyright {
+  margin-right: 1rem;
+  font-size: 1.8rem;
+}
+
+.username {
+  text-decoration: underline;
+  text-decoration-color: var(--color-gray);
+  font-weight: 700;
+}

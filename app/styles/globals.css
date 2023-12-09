@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-white: #fff;
+  --color-black: rgb(0, 0, 0);
+  --font-color-black: rgb(24, 24, 25);
+  --color-marron: #291507;
+  --color-marron-1: rgb(115, 103, 92);
+  --color-gray: #e3e1dc;
+  --color-left-card: #dec68b;
+}
+
+html,
+body {
+  font-family: Montserrat, sans-serif;
+  line-height: 1.6;
+  font-size: 62.5%;
+  background-color: var(--color-white);
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #0070f3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* utils */
+.mt-1 {
+  margin-top: 1rem !important;
+}
+.mt-2 {
+  margin-top: 2rem !important;
+}
+.mt-3 {
+  margin-top: 3rem !important;
+}
+.mt-4 {
+  margin-top: 4rem !important;
+}
+.mt-5 {
+  margin-top: 5rem !important;
+}
+
+.ml-2 {
+  margin-left: 2rem !important;
+}
+.ml-3 {
+  margin-left: 3rem !important;
+}
+.ml-4 {
+  margin-left: 4rem !important;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gap-5 {
+  gap: 7rem;
+}
+
+.w-500 {
+  width: 50rem;
+}

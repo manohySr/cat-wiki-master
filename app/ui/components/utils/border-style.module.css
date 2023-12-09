@@ -1,0 +1,7 @@
+.border {
+  width: 6rem;
+  height: 0.3rem;
+  background-color: var(--color-marron);
+  margin-bottom: 1.5rem;
+  border-radius: 10rem;
+}

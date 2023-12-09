@@ -1,0 +1,19 @@
+.button {
+  display: block;
+  margin-left: auto;
+  color: var(--color-marron-1);
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.02rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 2rem;
+}

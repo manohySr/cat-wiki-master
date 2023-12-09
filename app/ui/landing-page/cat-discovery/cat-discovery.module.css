@@ -1,0 +1,28 @@
+.container {
+  background: url(./../../../../public/assests/images/HeroImagelg.png);
+  padding: 2rem;
+  color: var(--color-white);
+  height: 75vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* width: 85%;
+    margin: 0 auto; */
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+}
+
+.discovery {
+  width: 45%;
+  padding: 8rem;
+}
+
+.logo {
+  content: "";
+  display: inline-block;
+  width: 35rem;
+  height: 12rem;
+  background-color: var(--color-white);
+  mask-image: url(./../../../../public/assests/CatwikiLogo.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}

@@ -1,0 +1,21 @@
+.container {
+  padding: 9rem 12rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.description {
+  padding: 8rem 0;
+}
+
+.layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.anotherLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-end;
+}

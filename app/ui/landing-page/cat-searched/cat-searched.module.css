@@ -1,0 +1,18 @@
+.container {
+  background-color: var(--color-gray);
+  height: 75vh;
+  border-bottom-left-radius: 3rem;
+  border-bottom-right-radius: 3rem;
+  padding: 3rem 12rem;
+}
+
+.cardImage {
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
