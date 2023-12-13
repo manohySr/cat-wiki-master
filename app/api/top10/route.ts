@@ -1,13 +1,12 @@
-import { getNameToIdMap } from "@/app/lib/hanlder";
+import { getTop10 } from "@/app/lib/dbAccess";
 
 export async function GET(request: Request) {
   try {
-    const data = await getNameToIdMap();
-    const catName = Array.from(data.keys());
+    const data = await getTop10();
     return new Response(
       JSON.stringify({
         stauts: "success",
-        data: catName,
+        data,
       })
     );
   } catch (error) {

@@ -18,3 +18,10 @@ export interface CatAbout {
   vocalisation?: number; // Another example property
   // Add other properties as needed
 }
+
+export interface Cat {
+  name: string;
+  popularity: number;
+  description: string;
+  imageUrl: string;
+}
