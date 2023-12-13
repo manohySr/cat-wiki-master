@@ -4,6 +4,7 @@
   align-items: center;
   width: 95%;
   border-radius: 10rem;
+  position: relative;
 }
 
 .input {
@@ -34,5 +35,51 @@
   font-size: 2.5rem !important;
   color: var(--font-color-black);
   margin-right: 2.5rem;
+}
+
+/* suggestion */
+.suggestionContainer {
+  position: absolute;
+  background-color: var(--color-white);
+  display: block;
+  width: 95%;
+  border-radius: 1.5rem;
+  color: black;
+  height: 35vh;
+  margin-top: 1rem;
+  overflow-y: hidden;
+}
+
+.suggestionOverflow {
+  width: 98%;
+  height: 100%;
+  overflow-y: scroll;
+  color: var(--font-color-black);
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+
+.suggestionOverflow::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+.suggestionOverflow::-webkit-scrollbar-thumb {
+  background-color: #5a5a5a98; /* Set the color of the thumb (the draggable part) */
+  border-radius: 6px; /* Set the border radius of the thumb */
+}
+
+.suggestionOverflow::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Set the color of the track (the area behind the thumb) */
+}
+
+.suggestion {
+  padding: 1rem;
+  padding-left: 2rem;
+}
+
+.suggestion:hover {
+  background-color: var(--color-gray-2);
   cursor: pointer;
 }

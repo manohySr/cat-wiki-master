@@ -6,7 +6,7 @@ export async function GET(request: Request) {
     const catName = Array.from(data.keys());
     return new Response(
       JSON.stringify({
-        stauts: "success",
+        status: "success",
         data: catName,
       })
     );

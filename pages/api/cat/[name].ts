@@ -12,7 +12,7 @@ export default async function handler(
   let catAbout: CatAbout | undefined;
   try {
     if (!catName) {
-      throw new Error("your dumb searching nothing");
+      throw new Error("you dumb searching nothing");
     }
 
     catAbout = await getCatAbout(catName);
