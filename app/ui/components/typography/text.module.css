@@ -19,3 +19,17 @@
   font-size: 2.2rem;
   color: var(--color-white);
 }
+
+.title {
+  color: var(--color-marron);
+  font-size: 3rem;
+  font-weight: 700;
+  display: block;
+}
+
+.paragraphe {
+  color: var(--color-marron);
+  font-size: 1.6rem;
+  font-weight: 400;
+  display: inline-block;
+}

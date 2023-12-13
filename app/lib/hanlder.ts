@@ -1,5 +1,3 @@
-import fs from "fs/promises";
-
 import { CatAbout } from "./entities";
 
 const CAT_URI = process.env.CAT_URI as string;
@@ -14,7 +12,6 @@ async function getNameToIdMap() {
   try {
     const response = await fetch(CAT_URI);
     const data = await response.json();
-    console.log(data);
     data.forEach((cat: any) => {
       const catAbout: CatAbout = {
         id: cat.id,

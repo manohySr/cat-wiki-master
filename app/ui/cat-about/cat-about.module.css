@@ -1,0 +1,34 @@
+.catabout {
+  display: flex;
+  gap: 10rem;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.catabout > img {
+  height: 200px;
+  width: auto;
+  border-radius: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex > * {
+  margin-bottom: 1.5rem;
+}
+
+.barcontainer {
+}
+
+.label {
+  width: 18rem;
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}

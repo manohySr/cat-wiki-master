@@ -1,5 +1,5 @@
+import LandingPage from "@/app/ui/landing-page/landing-page";
 import React from "react";
-import LandingPage from "./ui/landing-page/landing-page";
 
 export default function Home() {
   return (

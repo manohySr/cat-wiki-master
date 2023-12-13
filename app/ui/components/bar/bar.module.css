@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: start;
+  /* align-items: center; */
+}
+
+.bar {
+  height: 13px;
+  width: 50px;
+  border-radius: 5rem;
+  align-self: end;
+  margin-right: 1rem;
+}
+
+.gray {
+  background-color: var(--color-gray);
+}
+
+.marron {
+  background-color: var(--color-marron-2);
+}

@@ -75,11 +75,16 @@
 }
 
 .suggestion {
+  display: block;
+  text-decoration: none;
   padding: 1rem;
   padding-left: 2rem;
+  color: var(--font-color-black);
 }
 
 .suggestion:hover {
   background-color: var(--color-gray-2);
+  color: var(--font-color-black);
+  text-decoration: none;
   cursor: pointer;
 }

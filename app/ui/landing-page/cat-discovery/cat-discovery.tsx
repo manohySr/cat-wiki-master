@@ -24,7 +24,7 @@ export default function CatDiscovery() {
   );
   return (
     <>
-      <div className={`${styles.container} mt-3`}>
+      <div className={`${styles.container} `}>
         <div className={styles.discovery}>
           <div className={styles.logo}></div>
           <div className={"mt-1"}>

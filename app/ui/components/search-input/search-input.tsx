@@ -1,6 +1,7 @@
 import styles from "./search-input.module.css";
 import { IoSearchSharp } from "react-icons/io5";
 import React from "react";
+import Link from "next/link";
 
 interface SearchInputProps {
   placeholder: string;
@@ -23,7 +24,11 @@ export default function SearchInput({
             className={styles.input}
             onChange={(e) => onChange(e)}
             onFocus={() => setOnSearch(true)}
-            onBlur={() => setOnSearch(false)}
+            onBlur={() => {
+              setTimeout(() => {
+                setOnSearch(false);
+              }, 500);
+            }}
           />
           <IoSearchSharp className={styles.icon} />
         </div>
@@ -34,7 +39,12 @@ export default function SearchInput({
                 suggestions.map((suggestion, key) => {
                   return (
                     <React.Fragment key={key}>
-                      <div className={styles.suggestion}>{suggestion}</div>
+                      <Link
+                        href={`/cat/${suggestion}`}
+                        className={styles.suggestion}
+                      >
+                        {suggestion}
+                      </Link>
                     </React.Fragment>
                   );
                 })}
