@@ -1,14 +1,36 @@
-.catabout {
-  display: flex;
-  gap: 10rem;
-  width: 75%;
+.container {
+  width: 80%;
   margin: 0 auto;
 }
 
-.catabout > img {
+.catabout {
+  display: flex;
+  gap: 10rem;
+}
+
+@media (max-width: 768px) {
+  .catabout {
+    display: block;
+  }
+}
+
+.container img {
+  display: block;
   height: 200px;
   width: auto;
   border-radius: 1.5rem;
+  z-index: 2;
+}
+
+.container img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 10px; /* Adjust the width of the border as needed */
+  background-color: #ff0000; /* Set the border color */
+  z-index: 1;
 }
 
 .flex {
@@ -31,4 +53,70 @@
   display: flex;
   align-items: center;
   margin-bottom: 1.5rem;
+}
+
+.imageGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 10rem;
+}
+
+.containerFirstImage {
+  position: relative;
+  flex: 0 0 30%;
+}
+
+.firstImage img {
+  display: block;
+  position: absolute;
+  z-index: 100;
+}
+
+.borderLeft {
+  position: absolute;
+  background-color: var(--color-left-card);
+  top: 20px;
+  left: -1rem;
+  z-index: 1;
+  width: 20px;
+  height: 150px;
+  border-radius: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    /* width: 80%;
+    background-color: olivedrab; */
+  }
+  .containerFirstImage {
+    position: static;
+    flex: 0 0 30%;
+  }
+  .firstImage img {
+    display: block;
+    position: static;
+    z-index: 100;
+    margin-bottom: 2rem;
+  }
+  .catabout {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .imageGallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 1.5rem;
+    z-index: 2;
+  }
 }

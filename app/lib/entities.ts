@@ -1,5 +1,6 @@
 export interface CatAbout {
   id: string;
+  name: string;
   description: string;
   temperament: string;
   origin: string;

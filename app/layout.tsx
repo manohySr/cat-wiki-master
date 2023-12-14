@@ -1,5 +1,7 @@
 import Footer from "@/app/ui/components/footer/footer";
 import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import Loading from "./loading";
 import "./styles/globals.css";
 import Logo from "./ui/components/logo/logo";
 
@@ -15,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Logo />
-        <div>{children}</div>
-        <Footer />
+        <Suspense fallback={<Loading />}>
+          <Logo />
+          <div>{children}</div>
+          <Footer />
+        </Suspense>
       </body>
     </html>
   );

@@ -20,10 +20,12 @@ export default async function Page({
 }: {
   params: { catname: string };
 }) {
-  const { data } = await getData(params.catname);
+  const res = await getData(params.catname);
   return (
     <>
-      <CatAbout data={data} name={params.catname} />
+      <div className="mt-3">
+        <CatAbout data={res.data} />
+      </div>
     </>
   );
 }

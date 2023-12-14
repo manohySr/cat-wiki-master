@@ -19,3 +19,23 @@
 .marron {
   background-color: var(--color-marron-2);
 }
+
+@media (max-width: 600px) {
+  .bar {
+    height: 10px;
+    width: 30px;
+    border-radius: 5rem;
+    align-self: end;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .bar {
+    height: 10px;
+    width: 10px;
+    border-radius: 5rem;
+    align-self: end;
+    margin-right: 1rem;
+  }
+}

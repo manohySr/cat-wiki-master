@@ -15,6 +15,7 @@ async function getNameToIdMap() {
     data.forEach((cat: any) => {
       const catAbout: CatAbout = {
         id: cat.id,
+        name: cat.name,
         description: cat.description,
         temperament: cat.temperament,
         origin: cat.origin,
