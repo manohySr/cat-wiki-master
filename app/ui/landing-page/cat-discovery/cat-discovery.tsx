@@ -7,6 +7,23 @@ import styles from "./cat-discovery.module.css";
 export default function CatDiscovery() {
   const [catNames, setCatNames] = React.useState<string[]>([]);
   const [inputSearch, setInputSearch] = React.useState("");
+
+  const [placeholder, setPlaceholder] = React.useState("Enter your breed");
+  const handleResize = () => {
+    if (window.innerWidth <= 558) {
+      setPlaceholder("Search");
+    } else {
+      setPlaceholder("Enter your breed");
+    }
+  };
+
+  React.useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   React.useEffect(() => {
     const fetchCatName = async () => {
       const res = await fetch("/api/cat");
@@ -32,9 +49,9 @@ export default function CatDiscovery() {
               Get to know more about your <br></br>cat breed
             </TextWhite1>
           </div>
-          <div className="mt-4">
+          <div className={styles.marginTop}>
             <SearchInput
-              placeholder={"Enter your breed"}
+              placeholder={placeholder}
               onChange={handleChange}
               suggestions={filteredCatNames}
             />

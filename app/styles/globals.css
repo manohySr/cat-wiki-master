@@ -20,6 +20,19 @@ body {
   background-color: var(--color-white);
 }
 
+@media (max-width: 1072px) {
+  html,
+  body {
+    font-size: 55%;
+  }
+}
+@media (max-width: 838px) {
+  html,
+  body {
+    font-size: 50.5%;
+  }
+}
+
 *,
 *::before,
 *::after {

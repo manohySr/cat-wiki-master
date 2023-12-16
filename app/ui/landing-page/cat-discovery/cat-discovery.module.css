@@ -11,9 +11,42 @@
   border-top-right-radius: 3rem;
 }
 
+@media (max-width: 1080px) {
+  .container {
+    padding: 0;
+    background: url(./../../../../public/assests/images/HeroImagemd.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+}
+
+@media (max-width: 558px) {
+  .container {
+    background: url(./../../../../public/assests/images/HeroImagesm.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 45vh;
+  }
+}
+
 .discovery {
   width: 45%;
   padding: 8rem;
+}
+
+@media (max-width: 836px) {
+  .discovery {
+    width: 60%;
+    padding: 8rem;
+  }
+}
+
+@media (max-width: 558px) {
+  .discovery {
+    padding: 1rem 5rem;
+  }
 }
 
 .logo {
@@ -25,4 +58,28 @@
   mask-image: url(./../../../../public/assests/CatwikiLogo.svg);
   mask-size: contain;
   mask-repeat: no-repeat;
+}
+
+@media (max-width: 1072px) {
+  .logo {
+    width: 20rem;
+    height: 12rem;
+  }
+}
+
+@media (max-width: 558px) {
+  .logo {
+    height: 5rem;
+  }
+}
+
+/* utils */
+.marginTop {
+  margin-top: 4rem;
+}
+
+@media (max-width: 558px) {
+  .marginTop {
+    margin-top: 3rem;
+  }
 }
