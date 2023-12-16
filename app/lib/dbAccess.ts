@@ -1,4 +1,6 @@
 import { MongoClient, Db } from "mongodb";
+import { Cat } from "./entities";
+import { mapDocumentToCat } from "./utils";
 
 const MONGODB_URI = process.env.DB_URI as string;
 const DB_NAME = process.env.DB_NAME;
@@ -36,14 +38,22 @@ async function incrementPopularity(
   }
 }
 
-async function getTop10() {
-  const database = await connectToDatabase();
-  const catBreedsCollection = database.collection("cat");
+async function getTop10(): Promise<Cat[]> {
+  try {
+    const database = await connectToDatabase();
+    const catBreedsCollection = database.collection("cat");
 
-  const topCatBreeds = await catBreedsCollection
-    .aggregate([{ $sort: { popularity: -1 } }, { $limit: 10 }])
-    .toArray();
+    const topCatBreedsDocuments = await catBreedsCollection
+      .aggregate([{ $sort: { popularity: -1 } }, { $limit: 10 }])
+      .toArray();
 
-  return topCatBreeds;
+    const topCatBreeds: Cat[] = topCatBreedsDocuments.map(mapDocumentToCat);
+
+    return topCatBreeds;
+  } catch (error) {
+    // Handle error
+    console.error("Error fetching top 10 cat breeds:", error);
+    return [];
+  }
 }
 export { incrementPopularity, getTop10 };

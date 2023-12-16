@@ -7,10 +7,12 @@
 .description {
   padding: 8rem 0;
 }
-
 .layout {
   display: flex;
   gap: 2rem;
+}
+.paragraph {
+  width: 50rem;
 }
 
 .anotherLayout {
@@ -18,4 +20,53 @@
   flex-direction: column;
   gap: 2rem;
   align-items: flex-end;
+}
+
+.image1 {
+  display: block;
+  height: 17rem;
+  width: auto;
+}
+
+.image2 {
+  display: block;
+  width: 18rem;
+  height: auto;
+}
+
+.image3 {
+  display: block;
+  width: 22rem;
+  height: auto;
+}
+
+.navbutton {
+  text-decoration: none;
+}
+.navbutton:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 1245px) {
+  .container {
+    padding: 2rem 2rem;
+  }
+  .description {
+    width: 30%;
+  }
+  .paragraph {
+    width: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: block;
+  }
+  .description {
+    width: 100%;
+  }
+  .layout {
+    justify-content: center;
+  }
 }

@@ -1,4 +1,4 @@
-import { CatAbout } from "./entities";
+import { CatAbout, RandomImage } from "./entities";
 
 const CAT_URI = process.env.CAT_URI as string;
 let cachedData: Map<string, CatAbout> | null = null; // cache for the cat about
@@ -10,7 +10,7 @@ async function getNameToIdMap() {
 
   const nameToIdMap = new Map<string, CatAbout>();
   try {
-    const response = await fetch(CAT_URI);
+    const response = await fetch(CAT_URI, { cache: "force-cache" });
     const data = await response.json();
     data.forEach((cat: any) => {
       const catAbout: CatAbout = {
@@ -55,7 +55,7 @@ const fetchCatImages = async (id: string): Promise<string[]> => {
     return imageCache.get(id) || [];
   }
 
-  const response = await fetch(`${image_uri}${id}`);
+  const response = await fetch(`${image_uri}${id}`, { cache: "force-cache" });
   const data = await response.json();
   const images = data.map((image: any) => image.url);
   imageCache.set(id, images); //cahing

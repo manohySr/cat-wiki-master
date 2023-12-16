@@ -1,0 +1,44 @@
+.container {
+  padding: 0 15rem;
+}
+
+@media (max-width: 1080px) {
+  .container {
+    padding: 0 5rem;
+  }
+}
+
+.catcontainer {
+  display: flex;
+  align-items: start;
+  gap: 2rem;
+  margin: 5rem 0rem;
+  text-decoration: none;
+  border-radius: 1.5rem;
+  transition: 0.1s;
+}
+
+.catcontainer:hover {
+  text-decoration: none;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+}
+
+.image {
+  flex: 0 0 25%;
+}
+
+@media (max-width: 400px) {
+  .image {
+    display: none;
+  }
+}
+
+.image img {
+  display: block;
+  height: 150px;
+  width: auto;
+  border-radius: 1.5rem;
+}
+.description {
+}

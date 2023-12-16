@@ -1,15 +1,18 @@
 import Image from "next/image";
-import React from "react";
+import React, { cache } from "react";
 import NavButton from "../../components/button/nav-button";
 import { Text1, Text2 } from "../../components/typography/text";
 import BorderStyle from "../../components/utils/border-style";
 
-import src from "./../../../../public/assests/images/image 1.png";
 import styles from "./cat-searched.module.css";
+import { RandomImage } from "@/app/lib/entities";
+import Link from "next/link";
+import { getTop10 } from "@/app/lib/dbAccess";
 
 const arr = [1, 2, 3, 4];
 
-export default function CatSearched() {
+export default async function CatSearched() {
+  const cats = await getTop10();
   return (
     <div className={styles.container}>
       <Text2>Most Searched Breed</Text2>
@@ -20,13 +23,15 @@ export default function CatSearched() {
         <Text1>
           66+ Breeds For you <br></br>to discover
         </Text1>
-        <NavButton title={"see more"} />
+        <Link href={"/top10"} className={styles.navbutton}>
+          <NavButton title={"see more"} />
+        </Link>
       </h1>
-      <div className="mt-5 flex gap-5">
-        {arr?.map((index) => (
-          <React.Fragment key={index}>
+      <div className={styles.catGrid}>
+        {cats?.slice(0, 4).map((cat, key) => (
+          <React.Fragment key={key}>
             <div>
-              <CatCard />
+              <CatCard src={cat.imageUrl} name={cat.name} />
             </div>
           </React.Fragment>
         ))}
@@ -35,18 +40,17 @@ export default function CatSearched() {
   );
 }
 
-function CatCard() {
+function CatCard({ src, name }: { src: string; name: string }) {
   return (
     <>
-      <Image
-        width={200}
-        height={200}
+      <img
         className={styles.cardImage}
         src={src}
-        alt=""
+        loading="lazy"
+        alt="cat image"
       />
       <div className="mt-1">
-        <Text2>Bengal</Text2>
+        <Text2>{name}</Text2>
       </div>
     </>
   );

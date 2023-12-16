@@ -49,6 +49,13 @@
   }
 }
 
+@media (max-width: 400px) {
+  .image {
+    width: 70%;
+    padding: 2rem 1rem;
+  }
+}
+
 .logo {
   content: "";
   display: inline-block;

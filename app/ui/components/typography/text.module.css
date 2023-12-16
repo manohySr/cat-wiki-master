@@ -5,6 +5,15 @@
   line-height: 5rem;
   font-weight: 700;
 }
+@media (max-width: 650px) {
+  .t1 {
+    color: var(--color-marron);
+    font-size: 3rem;
+    display: inline-block;
+    line-height: 3rem;
+    font-weight: 700;
+  }
+}
 
 .t2 {
   color: var(--color-marron);

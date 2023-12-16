@@ -23,9 +23,7 @@ export default async function Page({
   const res = await getData(params.catname);
   return (
     <>
-      <div className="mt-3">
-        <CatAbout data={res.data} />
-      </div>
+      <div className="mt-3">{res?.data && <CatAbout data={res.data} />}</div>
     </>
   );
 }

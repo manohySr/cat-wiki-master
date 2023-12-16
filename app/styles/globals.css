@@ -103,3 +103,15 @@ img {
 .w-500 {
   width: 50rem;
 }
+
+.loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-15%);
+}
+
+.load {
+  width: 300px;
+}

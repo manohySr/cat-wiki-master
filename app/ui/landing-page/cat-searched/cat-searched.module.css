@@ -6,13 +6,58 @@
   padding: 3rem 12rem;
 }
 
+@media (max-width: 900px) {
+  .container {
+    padding: 2rem 5rem;
+  }
+}
+
 .cardImage {
-  border-radius: 2rem;
-  overflow: hidden;
+  display: block;
+  height: 170px;
+  width: auto;
+  border-radius: 1.5rem;
+}
+
+@media (max-width: 1245px) {
+  .cardImage {
+    height: 100px;
+    width: auto;
+  }
+}
+
+.catGrid {
+  display: flex;
+  gap: 5rem;
+  margin-top: 5rem;
+}
+
+@media (max-width: 650px) {
+  .catGrid {
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    gap: 5rem;
+  }
 }
 
 .flex {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.navbutton {
+  text-decoration: none;
+}
+.navbutton:hover {
+  text-decoration: none;
+}
+
+/* utils */
+@media (max-width: 650px) {
+  .navbutton {
+    display: none;
+  }
 }

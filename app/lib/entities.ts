@@ -1,3 +1,5 @@
+import { ObjectId } from "mongodb";
+
 export interface CatAbout {
   id: string;
   name: string;
@@ -21,8 +23,15 @@ export interface CatAbout {
 }
 
 export interface Cat {
+  _id: ObjectId;
   name: string;
   popularity: number;
   description: string;
   imageUrl: string;
+}
+
+export interface RandomImage {
+  id: string;
+  url: string;
+  name: string;
 }
