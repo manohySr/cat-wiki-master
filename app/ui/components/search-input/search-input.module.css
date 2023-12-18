@@ -23,7 +23,8 @@
   font-weight: 500;
 }
 
-.input::placeholder {
+.input::placeholder,
+.mobileInput::placeholder {
   color: var(--font-color-black);
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -86,5 +87,58 @@
   background-color: var(--color-gray-2);
   color: var(--font-color-black);
   text-decoration: none;
+  cursor: pointer;
+}
+
+/* on mobile */
+.mobileModal {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.655);
+  z-index: 3000;
+}
+
+.mobileContainer {
+  position: absolute;
+  width: 95%;
+  background-color: var(--color-white);
+  border-radius: 1.5rem;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.mobileSearch {
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  border: 1px solid var(--font-color-black);
+  margin-top: 6rem;
+  border-radius: 10rem;
+}
+
+.mobileInput {
+  width: 100%;
+}
+
+.suggestionMobile {
+  width: 80%;
+  margin: 2rem auto;
+  background-color: var(--color-white);
+  color: black;
+  height: 50vh;
+  overflow-y: hidden;
+}
+
+.cross {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
 }

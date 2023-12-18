@@ -3,6 +3,8 @@ import { IoSearchSharp } from "react-icons/io5";
 import React from "react";
 import Link from "next/link";
 
+import { RxCross2 } from "react-icons/rx";
+
 interface SearchInputProps {
   placeholder: string;
   onChange: (value: any) => void;
@@ -15,6 +17,19 @@ export default function SearchInput({
   suggestions,
 }: SearchInputProps) {
   const [onSearch, setOnSearch] = React.useState<boolean>(false);
+  const [isMobile, setIsMobile] = React.useState<boolean>(true);
+  const [displaySearch, setDisplaySearch] = React.useState<boolean>(false);
+
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 500);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   return (
     <>
       <div className="relative">
@@ -23,7 +38,10 @@ export default function SearchInput({
             placeholder={placeholder}
             className={styles.input}
             onChange={(e) => onChange(e)}
-            onFocus={() => setOnSearch(true)}
+            onFocus={() => {
+              setOnSearch(true);
+              setDisplaySearch(true);
+            }}
             onBlur={() => {
               setTimeout(() => {
                 setOnSearch(false);
@@ -32,7 +50,7 @@ export default function SearchInput({
           />
           <IoSearchSharp className={styles.icon} />
         </div>
-        {onSearch && (
+        {isMobile == false && onSearch && (
           <div className={styles.suggestionContainer}>
             <div className={styles.suggestionOverflow}>
               {suggestions?.length > 0 &&
@@ -52,6 +70,50 @@ export default function SearchInput({
           </div>
         )}
       </div>
+
+      {isMobile && displaySearch && (
+        <div className={styles.mobileModal}>
+          <div className={styles.mobileContainer}>
+            <RxCross2
+              className={`${styles.icon} ${styles.cross}`}
+              onClick={() => setDisplaySearch(false)}
+            />
+            <div className={styles.mobileSearch}>
+              <input
+                placeholder={placeholder}
+                className={styles.input}
+                onChange={(e) => onChange(e)}
+                onBlur={() => {
+                  setTimeout(() => {
+                    setOnSearch(false);
+                  }, 500);
+                }}
+              />
+              <div>
+                <IoSearchSharp className={styles.icon} />
+              </div>
+            </div>
+
+            <div className={styles.suggestionMobile}>
+              <div className={styles.suggestionOverflow}>
+                {suggestions?.length > 0 &&
+                  suggestions.map((suggestion, key) => {
+                    return (
+                      <React.Fragment key={key}>
+                        <Link
+                          href={`/cat/${suggestion}`}
+                          className={styles.suggestion}
+                        >
+                          {suggestion}
+                        </Link>
+                      </React.Fragment>
+                    );
+                  })}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
