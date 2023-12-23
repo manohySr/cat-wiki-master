@@ -1,14 +1,14 @@
 import Footer from "@/app/ui/components/footer/footer";
-import { Inter } from "next/font/google";
 import { Suspense } from "react";
 import Loading from "./loading";
 import "./styles/globals.css";
 import Logo from "./ui/components/logo/logo";
+import { Metadata } from "next";
 
-// const inter = Inter({ subsets: ["latin"] });
-
-export const siteTitle = "CAT-WIKI-MASTER";
-export const name = "Manohy RAJAONAH";
+export const metadata: Metadata = {
+  title: "CAT-WIKI-MASTER",
+  description: "Manohy RAJAONAH",
+};
 
 export default function RootLayout({
   children,
@@ -17,10 +17,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="title" content={siteTitle} />
-        <meta name="author" content={name} />
-      </head>
       <body>
         <Suspense fallback={<Loading />}>
           <Logo />
