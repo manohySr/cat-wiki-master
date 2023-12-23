@@ -1,18 +1,37 @@
-import { MongoClient, Db } from "mongodb";
+import { MongoClient, Db, ServerApiVersion } from "mongodb";
 import { Cat } from "./entities";
 import { mapDocumentToCat } from "./utils";
 
-const MONGODB_URI = process.env.DB_URI as string;
+const DB_URI_PROD = process.env.DB_URI_PROD as string;
 const DB_NAME = process.env.DB_NAME;
 let db: Db;
+const COLLECTION = "cat";
+
 async function connectToDatabase(): Promise<Db> {
-  if (!db) {
-    const client = new MongoClient(MONGODB_URI);
-    await client.connect();
-    console.log("connected e");
-    db = client.db(DB_NAME);
+  try {
+    if (!db) {
+      const client = new MongoClient(DB_URI_PROD, {
+        serverApi: {
+          version: ServerApiVersion.v1,
+          strict: true,
+          deprecationErrors: true,
+        },
+      });
+
+      // Connect the client to the server
+      await client.connect();
+
+      console.log("Connected to the database.");
+
+      // Set the 'db' variable to the connected database
+      db = client.db(DB_NAME);
+    }
+
+    return db;
+  } catch (error) {
+    console.error("Database connection error:", error);
+    throw error;
   }
-  return db;
 }
 
 async function incrementPopularity(
@@ -21,7 +40,7 @@ async function incrementPopularity(
   imageUrl: string
 ) {
   const database = await connectToDatabase();
-  const catBreedsCollection = database.collection("cat");
+  const catBreedsCollection = database.collection(COLLECTION);
 
   try {
     const result = await catBreedsCollection.findOneAndUpdate(
@@ -41,7 +60,7 @@ async function incrementPopularity(
 async function getTop10(): Promise<Cat[]> {
   try {
     const database = await connectToDatabase();
-    const catBreedsCollection = database.collection("cat");
+    const catBreedsCollection = database.collection(COLLECTION);
 
     const topCatBreedsDocuments = await catBreedsCollection
       .aggregate([{ $sort: { popularity: -1 } }, { $limit: 10 }])

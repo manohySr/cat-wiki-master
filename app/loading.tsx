@@ -10,7 +10,7 @@ export default function Loading() {
         <circle
           fill="#ggg"
           stroke="#ggg"
-          stroke-width="15"
+          strokeWidth="15"
           r="15"
           cx="35"
           cy="100"
@@ -28,7 +28,7 @@ export default function Loading() {
         <circle
           fill="#ggg"
           stroke="#ggg"
-          stroke-width="15"
+          strokeWidth="15"
           opacity=".8"
           r="15"
           cx="35"
@@ -47,7 +47,7 @@ export default function Loading() {
         <circle
           fill="#ggg"
           stroke="#ggg"
-          stroke-width="15"
+          strokeWidth="15"
           opacity=".6"
           r="15"
           cx="35"
@@ -66,7 +66,7 @@ export default function Loading() {
         <circle
           fill="#ggg"
           stroke="#ggg"
-          stroke-width="15"
+          strokeWidth="15"
           opacity=".4"
           r="15"
           cx="35"
@@ -85,7 +85,7 @@ export default function Loading() {
         <circle
           fill="#ggg"
           stroke="#ggg"
-          stroke-width="15"
+          strokeWidth="15"
           opacity=".2"
           r="15"
           cx="35"

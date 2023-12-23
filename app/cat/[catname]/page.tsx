@@ -2,7 +2,7 @@ import CatAbout from "@/app/ui/cat-about/cat-about";
 import React from "react";
 async function getData(catname: string) {
   try {
-    const res = await fetch(`http://localhost:3000/api/cat/${catname}`, {
+    const res = await fetch(`${process.env.API_LOCAL}/api/cat/${catname}`, {
       cache: "no-store",
     });
 

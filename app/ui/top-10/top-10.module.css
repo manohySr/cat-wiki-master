@@ -16,12 +16,13 @@
   text-decoration: none;
   border-radius: 1.5rem;
   transition: 0.1s;
+  padding: 1rem;
 }
 
 .catcontainer:hover {
   text-decoration: none;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px;
+  /* padding: 1rem; */
 }
 
 .image {

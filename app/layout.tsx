@@ -8,6 +8,7 @@ import Logo from "./ui/components/logo/logo";
 // const inter = Inter({ subsets: ["latin"] });
 
 export const siteTitle = "CAT-WIKI-MASTER";
+export const name = "Manohy RAJAONAH";
 
 export default function RootLayout({
   children,
@@ -16,6 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="title" content={siteTitle} />
+        <meta name="author" content={name} />
+      </head>
       <body>
         <Suspense fallback={<Loading />}>
           <Logo />

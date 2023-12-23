@@ -17,7 +17,7 @@ export default function SearchInput({
   suggestions,
 }: SearchInputProps) {
   const [onSearch, setOnSearch] = React.useState<boolean>(false);
-  const [isMobile, setIsMobile] = React.useState<boolean>(true);
+  const [isMobile, setIsMobile] = React.useState<boolean>(false);
   const [displaySearch, setDisplaySearch] = React.useState<boolean>(false);
 
   const handleResize = () => {
