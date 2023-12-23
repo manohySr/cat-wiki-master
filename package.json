@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "flex-start": "next flex-start",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
